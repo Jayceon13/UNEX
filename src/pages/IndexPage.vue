@@ -9,19 +9,20 @@
         <h3>Доставка грузов из Китая и Европы
           в Россию, Казахстан, Узбекистан и Украину</h3>
       </div>
-      <div class="services-block">
-        <div class="sea-block">
+      <div class="services-block" >
+        <div class="sea-block" @click="blockSea()">
             <video class="video-2" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" poster="/img/poster1.jpg" id="myVideo">
               <source src="/video/vdo.mp4" type="video/mp4">
             </video>
           <p>ДОСТАВКА МОРЕМ</p>
+          <img class="hand" src="/icons/hand.svg">
         </div>
-        <div class="block-service-second">
+        <div class="block-service-second" >
         <div class="block-avia-broc">
-          <div class="block-serv">
+          <div class="block-serv" @click="blockServ()">
             <p>КОМПЛЕКСНОЕ ОБСЛУЖИВАНИЕ</p>
           </div>
-          <div class="block-broc">
+          <div class="block-broc" @click="blockBroc()">
 
             <p>БРОКЕРСКИЕ УСЛУГИ</p>
           </div>
@@ -32,14 +33,14 @@
             <p>АВИАДОСТАВКА</p>
           </div>
         </div>
-        <div class="block-auto-save">
-          <div class="block-auto">
+        <div class="block-auto-save" >
+          <div class="block-auto" @click="blockAuto()">
             <video class="video-6" autoplay muted loop playsinline poster="/img/poster3.jpg" id="myVideo">
               <source src="/video/vdo2.mp4" type="video/mp4">
             </video>
             <p>АВТОДОСТАВКА</p>
           </div>
-          <div class="block-save">
+          <div class="block-save" @click="blockSave()">
             <p>ХРАНЕНИЕ</p>
           </div>
         </div>
@@ -162,7 +163,17 @@
         </div>
       </div>
     </div>
-    <avia-module v-model:show="showAvia"></avia-module>
+    <div class="block-clients">
+      <div class="main-clients">
+        <h3>НАШИ КЛИЕНТЫ</h3>
+      </div>
+    </div>
+    <avia-module v-model:showAv="showAvia"></avia-module>
+    <auto-module v-model:showAu="showAuto"></auto-module>
+    <broc-module v-model:showBr="showBroc"></broc-module>
+    <save-module v-model:showSa="showSave"></save-module>
+    <sea-module v-model:showSe="showSea"></sea-module>
+    <serv-module v-model:show="showServ"></serv-module>
   </q-page>
 </template>
 
@@ -170,11 +181,21 @@
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
 import AviaModule from "components/AviaModule.vue";
+import BrocModule from "components/BrocModule.vue";
+import AutoModule from "components/AutoModule.vue";
+import SaveModule from "components/SaveModule.vue";
+import SeaModule from "components/SeaModule.vue";
+import ServModule from "components/ServModule";
 
 export default defineComponent({
   name: 'IndexPage',
   components: {
-    AviaModule
+    BrocModule,
+    AviaModule,
+    AutoModule,
+    SaveModule,
+    SeaModule,
+    ServModule,
   },
   setup () {
     return {
@@ -184,17 +205,56 @@ export default defineComponent({
   data() {
     return {
       showAvia: false,
+      showAuto: false,
+      showBroc: false,
+      showSave: false,
+      showSea: false,
+      showServ: false,
     }
   },
   methods: {
     blockAvia() {
       this.showAvia = true;
-    }
+    },
+    blockAuto() {
+      this.showAuto = true;
+    },
+    blockBroc() {
+      this.showBroc = true;
+    },
+    blockSave() {
+      this.showSave = true;
+    },
+    blockSea() {
+      this.showSea = true;
+    },
+    blockServ() {
+      this.showServ = true;
+    },
   }
 })
 </script>
 
 <style scoped>
+.hand{
+  position: absolute;
+  width: 20px;
+  margin-top: 200px;
+  animation: up-hand 1.5s ease-in-out infinite;
+}
+@keyframes up-hand {
+  0%{
+    opacity: 0;
+    margin-top: 250px;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    margin-top: 150px;
+  }
+}
 .video-2 {
   position: relative;
   width: 320px;
@@ -239,6 +299,9 @@ export default defineComponent({
   width: 60%;
   margin-left: 100px;
   color: #666666;
+}
+.main-block h3{
+  font-weight: bold;
 }
 @media screen and (max-width: 720px){
   .main-block{
@@ -620,6 +683,21 @@ export default defineComponent({
     height: 200px;
     margin: 30px;
     background-position: 20%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .block-clients {
+    margin-top: 30px;
+    padding: 30px 100px 30px 100px;
+    justify-content: center;
+  }
+
+  .main-clients h3 {
+    display: flex;
+    flex-flow: column;
+    margin: 0;
+    font-size: 35px;
+    font-weight: bold;
   }
 }
 </style>

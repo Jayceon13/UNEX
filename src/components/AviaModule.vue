@@ -1,11 +1,11 @@
 <template>
-  <div class="dialog" v-if="show" @click.stop="hideBlock">
+  <div class="dialog" v-if="showAv" @click.stop="hideBlock">
     <div @click.stop class="dialog__content">
       <div class="x-icon-block">
         <img class="x-icon" @click="hideBlock" src="/icons/xicon.svg">
       </div>
       <div class="main-h">
-        <h5>Авиадоставка</h5>
+        <h5>АВИАДОСТАВКА</h5>
       </div>
       <div class="block-p">
         <p>Доставка карго из Китая является самым удобным способом перевозки коммерческих партий с широким ассортиментом, небольших грузов или образцов продукции. Быстрые сроки и минимум требуемых документов — вот что характеризует данную услугу.</p>
@@ -25,7 +25,7 @@
 export default {
   name: 'AviaModule',
   props: {
-    show: {
+    showAv: {
       type: Boolean,
       default: false,
 
@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     hideBlock() {
-      this.$emit("update:show", false);
+      this.$emit("update:showAv", false);
     },
   },
 }
