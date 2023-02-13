@@ -11,7 +11,7 @@
       </div>
       <div class="services-block">
         <div class="sea-block">
-            <video class="video-2" autoplay muted loop playsinline poster="" id="myVideo">
+            <video class="video-2" autoplay muted loop playsinline poster="/img/poster1.jpg" id="myVideo">
               <source src="/video/vdo.mp4" type="video/mp4">
             </video>
           <p>ДОСТАВКА МОРЕМ</p>
@@ -26,7 +26,7 @@
             <p>БРОКЕРСКИЕ УСЛУГИ</p>
           </div>
           <div class="block-avia">
-            <video class="video-5" autoplay muted loop playsinline poster="" id="myVideo">
+            <video class="video-5" autoplay muted loop playsinline poster="/img/poster2.jpg" id="myVideo">
               <source src="/video/vdo1.mp4" type="video/mp4">
             </video>
             <p>АВИАДОСТАВКА</p>
@@ -34,7 +34,7 @@
         </div>
         <div class="block-auto-save">
           <div class="block-auto">
-            <video class="video-6" autoplay muted loop playsinline poster="" id="myVideo">
+            <video class="video-6" autoplay muted loop playsinline poster="/img/poster3.jpg" id="myVideo">
               <source src="/video/vdo2.mp4" type="video/mp4">
             </video>
             <p>АВТОДОСТАВКА</p>
