@@ -25,7 +25,7 @@
 
             <p>БРОКЕРСКИЕ УСЛУГИ</p>
           </div>
-          <div class="block-avia">
+          <div class="block-avia" @click="blockAvia()">
             <video class="video-5" autoplay muted loop playsinline poster="/img/poster2.jpg" id="myVideo">
               <source src="/video/vdo1.mp4" type="video/mp4">
             </video>
@@ -70,15 +70,22 @@
           v-if="$q.screen.width <= 600">
             <q-carousel-slide name="block1" class="column no-wrap flex-center">
             <div class="block-inf">
-              <p>TEXT</p>
+              <p>Группа компаний UNEX была основана в 2001 году. Компания начинала свою деятельность
+                на российском рынке, занимаясь импортом и экспортом полимерных материалов, стеклооснов и композитных составляющих</p>
             </div>
             <div class="block-inf">
-              <p>TEXT</p>
+              <p>Для наших клиентов мы предлагаем такие сроки доставки, какие не может гарантировать ни одна другая компания</p>
             </div>
             </q-carousel-slide>
             <q-carousel-slide name="block2" class="column no-wrap flex-center">
             <div class="block-inf">
-              <p>TEXT</p>
+              <p>Китай -> Казахстан -> РФ
+                Авто/Авто
+
+                18-22 дня
+                Жд/Авто
+
+                28-32 дня</p>
             </div>
             <div class="block-inf">
               <p>TEXT</p>
@@ -104,10 +111,17 @@
         <div class="information-block" v-else>
         <div class="about-information-1">
           <div class="block-inf">
-            <p>TEXT</p>
+            <p>Группа компаний UNEX была основана в 2001 году. Компания начинала свою деятельность
+              на российском рынке.</p>
           </div>
           <div class="block-inf">
-            <p>TEXT</p>
+            <p>Китай -> Казахстан -> РФ
+              Авто/Авто
+
+              18-22 дня
+              Жд/Авто
+
+              28-32 дня</p>
           </div>
           <div class="block-inf">
             <p>TEXT</p>
@@ -118,7 +132,7 @@
         </div>
         <div class="about-information-2">
           <div class="block-inf">
-            <p>TEXT</p>
+            <p>Для наших клиентов мы предлагаем такие сроки доставки, какие не может гарантировать ни одна другая компания</p>
           </div>
           <div class="block-inf">
             <p>TEXT</p>
@@ -132,18 +146,49 @@
         </div>
       </div>
       </div>
+    <div class="block-advantages">
+      <div class="advantages-1">
+        <div class="advantages-info-1">
+        </div>
+      </div>
+      <div class="advanteges-2">
+        <div class="advantages-info-2">
+        </div>
+        <div class="advantages-info-3">
+
+        </div>
+        <div class="advantages-info-4">
+
+        </div>
+      </div>
+    </div>
+    <avia-module v-model:show="showAvia"></avia-module>
   </q-page>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
+import AviaModule from "components/AviaModule.vue";
 
 export default defineComponent({
   name: 'IndexPage',
+  components: {
+    AviaModule
+  },
   setup () {
     return {
       slide: ref('block1'),
+    }
+  },
+  data() {
+    return {
+      showAvia: false,
+    }
+  },
+  methods: {
+    blockAvia() {
+      this.showAvia = true;
     }
   }
 })
@@ -219,6 +264,7 @@ export default defineComponent({
   justify-content: center;
   border-radius: 30px;
   display: flex;
+  cursor: pointer;
 }
 .sea-block p{
   position: absolute;
@@ -336,6 +382,7 @@ export default defineComponent({
   display: flex;
   border-radius: 30px;
   text-align: center;
+  cursor: pointer;
 }
 .block-serv p{
   display: contents;
@@ -351,6 +398,7 @@ export default defineComponent({
   display: flex;
   border-radius: 30px;
   text-align: center;
+  cursor: pointer;
 }
 .block-broc p{
   display: contents;
@@ -368,6 +416,7 @@ export default defineComponent({
   display: flex;
   height: 155px;
   border-radius: 30px;
+  cursor: pointer;
 }
 .block-auto{
   align-items: center;
@@ -376,6 +425,7 @@ export default defineComponent({
   display: flex;
   height: 155px;
   border-radius: 30px;
+  cursor: pointer;
 }
 .block-auto p{
   position: absolute;
@@ -387,6 +437,7 @@ export default defineComponent({
   display: flex;
   height: 155px;
   border-radius: 30px;
+  cursor: pointer;
 }
 .block-save p{
   display: contents;
@@ -404,6 +455,7 @@ export default defineComponent({
   .block-about-us{
     margin-top: 30px;
     padding: 30px 100px 30px 100px;
+    justify-content: center;
   }
   .main-about h3{
     display: flex;
@@ -431,9 +483,11 @@ export default defineComponent({
   }
   .about-information-1{
     display: flex;
+    justify-content: center;
   }
   .about-information-2{
     display: flex;
+    justify-content: center;
   }
 }
 @media screen and (max-width: 1000px){
@@ -490,5 +544,82 @@ export default defineComponent({
   border-radius: 30px;
   justify-content: center;
   text-align: center;
+}
+.block-advantages{
+  display: flex;
+}
+.advantages-info-1{
+  background-image: url("/img/china.jpg");
+  background-size: cover;
+}
+.advantages-info-2{
+  background-image: url("/img/office.jpg");
+  background-size: cover;
+}
+.advantages-info-3{
+  background-image: url("/img/china.jpg");
+  background-size: cover;
+}
+.advantages-info-4{
+  background-image: url("/img/office.jpg");
+  background-size: cover;
+}
+
+@media screen and (min-width: 1000px){
+  .block-advantages{
+    justify-content: center;
+  }
+  .advantages-1{
+    display: flex;
+  }
+  .advantages-info-1{
+    width: 400px;
+    margin: 20px;
+  }
+  .advantages-info-2{
+    width: 400px;
+    height: 200px;
+    margin: 20px;
+  }
+  .advantages-info-3{
+    width: 400px;
+    height: 200px;
+    margin: 20px;
+    background-size: 340px;
+  }
+  .advantages-info-4{
+    width: 400px;
+    height: 200px;
+    margin: 20px;
+  }
+}
+@media screen and (max-width: 1000px){
+  .block-advantages{
+
+    flex-flow: column;
+    justify-content: center;
+    padding: 30px 30px 30px 30px;
+    width: 100%;
+  }
+  .advantages-info-1{
+    height: 200px;
+    margin: 30px;
+    background-position: 20%;
+  }
+  .advantages-info-2{
+    height: 200px;
+    margin: 30px;
+    background-position: 20%;
+  }
+  .advantages-info-3{
+    height: 200px;
+    margin: 30px;
+    background-position: 20%;
+  }
+  .advantages-info-4{
+    height: 200px;
+    margin: 30px;
+    background-position: 20%;
+  }
 }
 </style>
