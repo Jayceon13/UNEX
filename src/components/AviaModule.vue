@@ -71,6 +71,9 @@ h5{
   color: white;
 }
 @media screen and (max-width: 600px){
+  .dialog{
+    justify-content: center;
+  }
   .dialog__content{
     margin-left: 20px;
     margin-right: 20px;

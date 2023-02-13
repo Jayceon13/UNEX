@@ -11,7 +11,7 @@
       </div>
       <div class="services-block">
         <div class="sea-block">
-            <video class="video-2" autoplay muted loop playsinline poster="/img/poster1.jpg" id="myVideo">
+            <video class="video-2" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" poster="/img/poster1.jpg" id="myVideo">
               <source src="/video/vdo.mp4" type="video/mp4">
             </video>
           <p>ДОСТАВКА МОРЕМ</p>
