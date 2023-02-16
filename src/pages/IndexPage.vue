@@ -6,42 +6,35 @@
         </div>
       </div>
       <div class="main-block">
-        <h3>Доставка грузов из Китая и Европы
-          в Россию, Казахстан, Узбекистан и Украину</h3>
+        <h3>Оказываем услуги по транспортной и финансовой логистике.</h3>
+        <h3>Доставляем грузы из стран СНГ, Турции и Китая в Россию.</h3>
       </div>
       <div class="services-block" >
         <div class="sea-block" @click="blockSea()">
             <video class="video-2" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" poster="/img/poster1.jpg" id="myVideo">
               <source src="/video/vdo.mp4" type="video/mp4">
             </video>
-          <p>ДОСТАВКА МОРЕМ</p>
+          <p>ДОСТАВКА ГРУЗОВ ПОД КЛЮЧ</p>
           <img class="hand" src="/icons/hand.svg">
         </div>
         <div class="block-service-second" >
         <div class="block-avia-broc">
-          <div class="block-serv" @click="blockServ()">
-            <p>КОМПЛЕКСНОЕ ОБСЛУЖИВАНИЕ</p>
-          </div>
-          <div class="block-broc" @click="blockBroc()">
-
-            <p>БРОКЕРСКИЕ УСЛУГИ</p>
-          </div>
           <div class="block-avia" @click="blockAvia()">
             <video class="video-5" autoplay muted loop playsinline poster="/img/poster2.jpg" id="myVideo">
               <source src="/video/vdo1.mp4" type="video/mp4">
             </video>
-            <p>АВИАДОСТАВКА</p>
+            <p>ТРАНСПОРТНАЯ ЛОГИСТИКА</p>
           </div>
-        </div>
-        <div class="block-auto-save" >
           <div class="block-auto" @click="blockAuto()">
             <video class="video-6" autoplay muted loop playsinline poster="/img/poster3.jpg" id="myVideo">
               <source src="/video/vdo2.mp4" type="video/mp4">
             </video>
-            <p>АВТОДОСТАВКА</p>
+            <p>ИНФОГРАФИКА СРОКИ</p>
           </div>
+        </div>
+          <div class="block-auto-save" >
           <div class="block-save" @click="blockSave()">
-            <p>ХРАНЕНИЕ</p>
+            <p>ФИНАНСОВАЯ<br>ЛОГИСТИКА</p>
           </div>
         </div>
       </div>
@@ -167,6 +160,68 @@
       <div class="main-clients">
         <h3>НАШИ КЛИЕНТЫ</h3>
       </div>
+      <div class="clients-block-all">
+      <div class="clients-1">
+        <div class="client-block-1">
+          <div class="client-block">
+
+          </div>
+          <div class="client-block">
+
+          </div>
+          <div class="client-block">
+
+          </div>
+          <div class="client-block">
+
+          </div>
+        </div>
+        <div class="client-block-2">
+          <div class="client-block">
+
+          </div>
+          <div class="client-block">
+
+          </div>
+          <div class="client-block">
+
+          </div>
+          <div class="client-block">
+
+          </div>
+        </div>
+      </div>
+      <div class="clients-2">
+        <div class="client-block-3">
+          <div class="client-block">
+
+          </div>
+          <div class="client-block">
+
+          </div>
+          <div class="client-block">
+
+          </div>
+          <div class="client-block">
+
+          </div>
+        </div>
+        <div class="client-block-4">
+          <div class="client-block">
+
+          </div>
+          <div class="client-block">
+
+          </div>
+          <div class="client-block">
+
+          </div>
+          <div class="client-block">
+
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
     <avia-module v-model:showAv="showAvia"></avia-module>
     <auto-module v-model:showAu="showAuto"></auto-module>
@@ -243,16 +298,14 @@ export default defineComponent({
   animation: up-hand 1.5s ease-in-out infinite;
 }
 @keyframes up-hand {
-  0%{
+  0% {
     opacity: 0;
-    margin-top: 250px;
   }
   50%{
     opacity: 1;
   }
   100%{
     opacity: 0;
-    margin-top: 150px;
   }
 }
 .video-2 {
@@ -296,11 +349,13 @@ export default defineComponent({
   }
 }
 .main-block{
-  width: 60%;
-  margin-left: 100px;
+  justify-content: space-around;
+  margin: 0 100px 0 100px;
   color: #666666;
+  display: flex;
 }
 .main-block h3{
+  font-size: 30px;
   font-weight: bold;
 }
 @media screen and (max-width: 720px){
@@ -319,6 +374,7 @@ export default defineComponent({
 }
 .block-service-second{
   width: 100%;
+  display: flex;
 }
 .sea-block{
   align-items: center;
@@ -331,6 +387,8 @@ export default defineComponent({
 }
 .sea-block p{
   position: absolute;
+  text-align: center;
+  width: min-content;
 }
 .services-block {
   color: white;
@@ -339,9 +397,13 @@ export default defineComponent({
   margin: 15px;
   align-self: flex-end;
 }
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 1200px){
   .block-avia-broc{
-    height: 155px;
+    height: 320px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    width: 80%;
   }
   .block-auto-save{
     height: 155px;
@@ -362,23 +424,64 @@ export default defineComponent({
   .block-avia{
     margin-left: 10px;
     margin-right: 10px;
-    width: 60%;
+    width: auto;
   }
   .block-auto{
     margin-left: 10px;
     margin-right: 10px;
-    width: 80%;
+    width: auto;
   }
   .block-save{
+    width: 320px;
+    height: 320px;
+    margin-left: 10px;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1200px){
+  .block-avia-broc{
+    height: 320px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    width: 80%;
+  }
+  .block-auto-save{
+    height: 155px;
+  }
+  .services-block{
+    margin: 0 100px 0 100px;
+  }
+  .block-serv{
     width: 155px;
     margin-left: 10px;
     margin-right: 10px;
   }
-  .block-auto-save{
-    margin-top: 10px;
+  .block-broc{
+    width: 155px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .block-avia{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+  }
+  .block-auto{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+  }
+  .block-save{
+    width: 320px;
+    height: 320px;
+    margin-left: 10px;
+  }
+  .block-save p{
+    font-size: 20px;
   }
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1200px){
   .services-block{
     flex-flow: column;
     height: 100%;
@@ -389,13 +492,18 @@ export default defineComponent({
   .block-avia-broc{
     flex-flow: column;
     height: auto;
+    width: 50%;
+    margin-right: 10px;
   }
   .block-service-second{
     height: auto;
+    margin-bottom: 25px;
   }
   .block-auto-save{
     flex-flow: column;
     height: auto;
+    width: 50%;
+    margin-left: 10px;
   }
   .sea-block{
     margin: 10px 0 10px 0;
@@ -417,14 +525,33 @@ export default defineComponent({
   .block-avia{
     margin: 10px 0 10px 0;
     width: 100%;
+    text-align: center;
+  }
+  .block-avia p{
+    font-size: 15px;
   }
   .block-auto{
-    margin: 10px 0 10px 0;
+    margin: 10px 0 0 0;
     width: 100%;
+    text-align: center;
+  }
+  .block-auto p{
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+    width: min-content;
   }
   .block-save{
-    margin: 10px 0 10px 0;
+    margin: 10px 0 0 0;
     width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .block-save p{
+    font-size: 15px;
+  }
+  .main-block{
+    flex-flow: column;
   }
 }
 .services-block{
@@ -498,7 +625,6 @@ export default defineComponent({
   justify-content: center;
   background: #ff8562;
   display: flex;
-  height: 155px;
   border-radius: 30px;
   cursor: pointer;
 }
@@ -506,7 +632,7 @@ export default defineComponent({
   display: contents;
   text-align: center;
   position: absolute;
-  font-size: 15px;
+  width: min-content;
 }
 .block-about-us{
   display: flex;
@@ -691,13 +817,91 @@ export default defineComponent({
     padding: 30px 100px 30px 100px;
     justify-content: center;
   }
-
-  .main-clients h3 {
+}
+.main-clients h3 {
+  color: #666666;
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+  font-size: 35px;
+  font-weight: bold;
+}
+.client-block{
+  background: grey;
+  margin: 10px;
+  border-radius: 30px;
+}
+@media screen and (min-width: 1300px) {
+  .client-block{
+    width: 300px;
+    height: 150px;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1300px){
+  .client-block{
+    width: 250px;
+    height: 130px;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1200px){
+  .client-block{
+    width: 200px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 1000px){
+  .client-block{
+    width: 200px;
+    height: 100px;
+  }
+  .clients-block-all{
     display: flex;
     flex-flow: column;
-    margin: 0;
-    font-size: 35px;
-    font-weight: bold;
+    justify-content: center;
   }
+  .clients-1{
+    justify-content: center;
+  }
+  .clients-2{
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1000px){
+  .client-block{
+    width: 150px;
+    height: 80px;
+  }
+  .block-clients {
+    margin-top: 30px;
+    padding: 30px 30px 30px 30px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+.client-block-1{
+  display: flex;
+  flex-flow: column;
+}
+.client-block-2{
+  display: flex;
+  flex-flow: column;
+}
+.client-block-3{
+  display: flex;
+  flex-flow: column;
+}
+.client-block-4{
+  display: flex;
+  flex-flow: column;
+}
+.clients-1{
+  display: flex;
+}
+.clients-2{
+  display: flex;
+}
+.clients-block-all{
+  display: flex;
+  justify-content: center;
 }
 </style>
