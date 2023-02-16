@@ -1,13 +1,12 @@
 <template>
   <q-page class="index-page">
       <div class="logo-unex">
-        <div class="logo-block" v-if="$route.path !== '/services'">
+        <div class="logo-block" v-if="$route.path !== '/services'" style="opacity: 1;">
           <img alt="" src="/img/logo.png">
         </div>
       </div>
-      <div class="main-block">
+      <div class="main-block" >
         <h3>Оказываем услуги по транспортной и финансовой логистике.</h3>
-        <h3>Доставляем грузы из стран СНГ, Турции и Китая в Россию.</h3>
       </div>
       <div class="services-block" >
         <div class="sea-block" @click="blockSea()">
@@ -26,15 +25,10 @@
             <p>ТРАНСПОРТНАЯ ЛОГИСТИКА</p>
           </div>
           <div class="block-auto" @click="blockAuto()">
-            <video class="video-6" autoplay muted loop playsinline poster="/img/poster3.jpg" id="myVideo">
-              <source src="/video/vdo2.mp4" type="video/mp4">
+            <video class="video-6" autoplay muted loop playsinline poster="/img/poster4.jpg" id="myVideo">
+              <source src="/video/vdo3.mp4" type="video/mp4">
             </video>
-            <p>ИНФОГРАФИКА СРОКИ</p>
-          </div>
-        </div>
-          <div class="block-auto-save" >
-          <div class="block-save" @click="blockSave()">
-            <p>ФИНАНСОВАЯ<br>ЛОГИСТИКА</p>
+            <p>ФИНАНСОВАЯ ЛОГИСТИКА</p>
           </div>
         </div>
       </div>
@@ -46,9 +40,7 @@
           </div>
         </div>
         <div class="main-about">
-        <h3><span style="color: #ff8562">UNEX LOGISTIC SYSTEMS -</span>
-            <span style="color: #666666">КОЛОССАЛЬНЫЙ ОПЫТ И ВЫСОКОЕ КАЧЕСТВО</span>
-        </h3>
+          <h3>Доставляем грузы из стран СНГ, Турции и Китая в Россию.</h3>
         </div>
         <q-carousel
           v-model="slide"
@@ -156,73 +148,6 @@
         </div>
       </div>
     </div>
-    <div class="block-clients">
-      <div class="main-clients">
-        <h3>НАШИ КЛИЕНТЫ</h3>
-      </div>
-      <div class="clients-block-all">
-      <div class="clients-1">
-        <div class="client-block-1">
-          <div class="client-block">
-
-          </div>
-          <div class="client-block">
-
-          </div>
-          <div class="client-block">
-
-          </div>
-          <div class="client-block">
-
-          </div>
-        </div>
-        <div class="client-block-2">
-          <div class="client-block">
-
-          </div>
-          <div class="client-block">
-
-          </div>
-          <div class="client-block">
-
-          </div>
-          <div class="client-block">
-
-          </div>
-        </div>
-      </div>
-      <div class="clients-2">
-        <div class="client-block-3">
-          <div class="client-block">
-
-          </div>
-          <div class="client-block">
-
-          </div>
-          <div class="client-block">
-
-          </div>
-          <div class="client-block">
-
-          </div>
-        </div>
-        <div class="client-block-4">
-          <div class="client-block">
-
-          </div>
-          <div class="client-block">
-
-          </div>
-          <div class="client-block">
-
-          </div>
-          <div class="client-block">
-
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
     <avia-module v-model:showAv="showAvia"></avia-module>
     <auto-module v-model:showAu="showAuto"></auto-module>
     <broc-module v-model:showBr="showBroc"></broc-module>
@@ -245,12 +170,9 @@ import ServModule from "components/ServModule";
 export default defineComponent({
   name: 'IndexPage',
   components: {
-    BrocModule,
     AviaModule,
     AutoModule,
-    SaveModule,
     SeaModule,
-    ServModule,
   },
   setup () {
     return {
@@ -261,10 +183,7 @@ export default defineComponent({
     return {
       showAvia: false,
       showAuto: false,
-      showBroc: false,
-      showSave: false,
       showSea: false,
-      showServ: false,
     }
   },
   methods: {
@@ -274,17 +193,8 @@ export default defineComponent({
     blockAuto() {
       this.showAuto = true;
     },
-    blockBroc() {
-      this.showBroc = true;
-    },
-    blockSave() {
-      this.showSave = true;
-    },
     blockSea() {
       this.showSea = true;
-    },
-    blockServ() {
-      this.showServ = true;
     },
   }
 })
@@ -355,7 +265,12 @@ export default defineComponent({
   display: flex;
 }
 .main-block h3{
-  font-size: 30px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.main-about h3{
+  color: #666666;
+  font-size: 40px;
   font-weight: bold;
 }
 @media screen and (max-width: 720px){
@@ -370,6 +285,12 @@ export default defineComponent({
     font-size: 30px;
     margin: 30px;
     font-weight: bold;
+  }
+  .main-about h3{
+    color: #666666;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
   }
 }
 .block-service-second{
@@ -397,29 +318,16 @@ export default defineComponent({
   margin: 15px;
   align-self: flex-end;
 }
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1000px){
   .block-avia-broc{
     height: 320px;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-    width: 80%;
-  }
-  .block-auto-save{
-    height: 155px;
+    width: 100%;
   }
   .services-block{
     margin: 0 100px 0 100px;
-  }
-  .block-serv{
-    width: 155px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .block-broc{
-    width: 155px;
-    margin-left: 10px;
-    margin-right: 10px;
   }
   .block-avia{
     margin-left: 10px;
@@ -431,57 +339,12 @@ export default defineComponent({
     margin-right: 10px;
     width: auto;
   }
-  .block-save{
-    width: 320px;
-    height: 320px;
-    margin-left: 10px;
-    text-align: center;
+  .main-block{
+    width: 60%;
   }
 }
-@media screen and (min-width: 1200px){
-  .block-avia-broc{
-    height: 320px;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
-    width: 80%;
-  }
-  .block-auto-save{
-    height: 155px;
-  }
-  .services-block{
-    margin: 0 100px 0 100px;
-  }
-  .block-serv{
-    width: 155px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .block-broc{
-    width: 155px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .block-avia{
-    margin-left: 10px;
-    margin-right: 10px;
-    width: auto;
-  }
-  .block-auto{
-    margin-left: 10px;
-    margin-right: 10px;
-    width: auto;
-  }
-  .block-save{
-    width: 320px;
-    height: 320px;
-    margin-left: 10px;
-  }
-  .block-save p{
-    font-size: 20px;
-  }
-}
-@media screen and (max-width: 1200px){
+
+@media screen and (max-width: 1000px){
   .services-block{
     flex-flow: column;
     height: 100%;
@@ -492,18 +355,12 @@ export default defineComponent({
   .block-avia-broc{
     flex-flow: column;
     height: auto;
-    width: 50%;
+    width: 100%;
     margin-right: 10px;
   }
   .block-service-second{
     height: auto;
     margin-bottom: 25px;
-  }
-  .block-auto-save{
-    flex-flow: column;
-    height: auto;
-    width: 50%;
-    margin-left: 10px;
   }
   .sea-block{
     margin: 10px 0 10px 0;
@@ -511,16 +368,8 @@ export default defineComponent({
   .block-avia{
     margin: 10px 0 10px 0;
   }
-  .block-serv{
-    width: 100%;
-    margin: 10px 0 10px 0;
-  }
   .services-block{
     margin: 15px 30px 15px 30px;
-  }
-  .block-broc{
-    margin: 10px 0 10px 0;
-    width: 100%;
   }
   .block-avia{
     margin: 10px 0 10px 0;
@@ -528,7 +377,7 @@ export default defineComponent({
     text-align: center;
   }
   .block-avia p{
-    font-size: 15px;
+    font-size: 20px;
   }
   .block-auto{
     margin: 10px 0 0 0;
@@ -536,16 +385,9 @@ export default defineComponent({
     text-align: center;
   }
   .block-auto p{
-    font-size: 15px;
+    font-size: 20px;
     text-align: center;
     padding: 10px;
-    width: min-content;
-  }
-  .block-save{
-    margin: 10px 0 0 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
   }
   .block-save p{
     font-size: 15px;
@@ -561,34 +403,11 @@ export default defineComponent({
   display: flex;
   overflow: hidden;
 }
-.block-auto-save{
-  display: flex;
-}
-.block-serv{
-  height: 155px;
-  align-items: center;
-  justify-content: center;
-  background: #ff8562;
-  display: flex;
-  border-radius: 30px;
-  text-align: center;
-  cursor: pointer;
-}
 .block-serv p{
   display: contents;
   text-align: center;
   position: absolute;
   font-size: 15px;
-}
-.block-broc{
-  height: 155px;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  border-radius: 30px;
-  text-align: center;
-  cursor: pointer;
 }
 .block-broc p{
   display: contents;
@@ -620,14 +439,6 @@ export default defineComponent({
 .block-auto p{
   position: absolute;
 }
-.block-save{
-  align-items: center;
-  justify-content: center;
-  background: #ff8562;
-  display: flex;
-  border-radius: 30px;
-  cursor: pointer;
-}
 .block-save p{
   display: contents;
   text-align: center;
@@ -646,19 +457,13 @@ export default defineComponent({
     padding: 30px 100px 30px 100px;
     justify-content: center;
   }
-  .main-about h3{
-    display: flex;
-    flex-flow: column;
-    margin: 0;
-    font-size: 35px;
-    font-weight: bold;
-  }
   .main-about{
-    padding-left: 60px;
+    width: 70%;
   }
   .logo-about{
     display: flex;
     width: 150px;
+    padding: 20px;
   }
   .logo-about-us img{
     width: 100%;
@@ -685,18 +490,11 @@ export default defineComponent({
     flex-flow: column;
     justify-content: center;
   }
-  .main-about h3{
-    display: flex;
-    flex-flow: column;
-    margin: 0;
-    font-size: 20px;
-    text-align: center;
-    font-weight: bold;
-  }
   .logo-about{
     display: flex;
     width: 100%;
     justify-content: center;
+    padding: 20px;
   }
   .logo-about-us img{
     width: 155px;
@@ -716,12 +514,9 @@ export default defineComponent({
     margin: 20px;
   }
 }
-@media screen and (max-width: 600px){
-}
 .main-about{
   justify-content: center;
   display: flex;
-  width: 100%;
 }
 .information-block{
   display: flex;
@@ -810,98 +605,5 @@ export default defineComponent({
     margin: 30px;
     background-position: 20%;
   }
-}
-@media screen and (min-width: 1000px) {
-  .block-clients {
-    margin-top: 30px;
-    padding: 30px 100px 30px 100px;
-    justify-content: center;
-  }
-}
-.main-clients h3 {
-  color: #666666;
-  display: flex;
-  flex-flow: column;
-  margin: 0;
-  font-size: 35px;
-  font-weight: bold;
-}
-.client-block{
-  background: grey;
-  margin: 10px;
-  border-radius: 30px;
-}
-@media screen and (min-width: 1300px) {
-  .client-block{
-    width: 300px;
-    height: 150px;
-  }
-}
-@media screen and (min-width: 1200px) and (max-width: 1300px){
-  .client-block{
-    width: 250px;
-    height: 130px;
-  }
-}
-@media screen and (min-width: 1000px) and (max-width: 1200px){
-  .client-block{
-    width: 200px;
-    height: 100px;
-  }
-}
-@media screen and (max-width: 1000px){
-  .client-block{
-    width: 200px;
-    height: 100px;
-  }
-  .clients-block-all{
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-  }
-  .clients-1{
-    justify-content: center;
-  }
-  .clients-2{
-    justify-content: center;
-  }
-}
-@media screen and (max-width: 1000px){
-  .client-block{
-    width: 150px;
-    height: 80px;
-  }
-  .block-clients {
-    margin-top: 30px;
-    padding: 30px 30px 30px 30px;
-    justify-content: center;
-    text-align: center;
-  }
-}
-.client-block-1{
-  display: flex;
-  flex-flow: column;
-}
-.client-block-2{
-  display: flex;
-  flex-flow: column;
-}
-.client-block-3{
-  display: flex;
-  flex-flow: column;
-}
-.client-block-4{
-  display: flex;
-  flex-flow: column;
-}
-.clients-1{
-  display: flex;
-}
-.clients-2{
-  display: flex;
-}
-.clients-block-all{
-  display: flex;
-  justify-content: center;
 }
 </style>
