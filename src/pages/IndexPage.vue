@@ -2,7 +2,7 @@
   <q-page class="index-page">
       <div class="logo-unex">
         <div class="logo-block" v-if="$route.path !== '/services'" style="opacity: 1;">
-          <img alt="" src="/img/logo.png">
+          <img alt="" src="/icons/UnexGroup.png">
         </div>
       </div>
       <div class="main-block" >
@@ -36,101 +36,29 @@
       <div class="block-about-us">
         <div class="logo-about">
           <div class="logo-about-us" v-if="$route.path !== '/services'">
-            <img alt="" src="/img/logo.png">
+            <img alt="" src="/icons/UnexGroup.png">
           </div>
         </div>
         <div class="main-about">
           <h3>Доставляем грузы из стран СНГ, Турции и Китая в Россию.</h3>
         </div>
-        <q-carousel
-          v-model="slide"
-          transition-prev="scale"
-          transition-next="scale"
-          swipeable
-          animated
-          control-color="white"
-          navigation
-          padding
-          arrows
-          class="bg-grey text-black shadow-1 rounded-borders"
-          v-if="$q.screen.width <= 600">
-            <q-carousel-slide name="block1" class="column no-wrap flex-center">
-            <div class="block-inf">
-              <p>Группа компаний UNEX была основана в 2001 году. Компания начинала свою деятельность
-                на российском рынке, занимаясь импортом и экспортом полимерных материалов, стеклооснов и композитных составляющих</p>
-            </div>
-            <div class="block-inf">
-              <p>Для наших клиентов мы предлагаем такие сроки доставки, какие не может гарантировать ни одна другая компания</p>
-            </div>
-            </q-carousel-slide>
-            <q-carousel-slide name="block2" class="column no-wrap flex-center">
-            <div class="block-inf">
-              <p>Китай -> Казахстан -> РФ
-                Авто/Авто
-
-                18-22 дня
-                Жд/Авто
-
-                28-32 дня</p>
-            </div>
-            <div class="block-inf">
-              <p>TEXT</p>
-            </div>
-            </q-carousel-slide>
-          <q-carousel-slide name="block3" class="column no-wrap flex-center">
-            <div class="block-inf">
-              <p>TEXT</p>
-            </div>
-            <div class="block-inf">
-              <p>TEXT</p>
-            </div>
-          </q-carousel-slide>
-          <q-carousel-slide name="block4" class="column no-wrap flex-center">
-            <div class="block-inf">
-              <p>TEXT</p>
-            </div>
-            <div class="block-inf">
-              <p>TEXT</p>
-            </div>
-          </q-carousel-slide>
-        </q-carousel>
-        <div class="information-block" v-else>
-        <div class="about-information-1">
-          <div class="block-inf">
-            <p>Группа компаний UNEX была основана в 2001 году. Компания начинала свою деятельность
-              на российском рынке.</p>
+        <div class="blocks-countries">
+          <div class="countries-block-1">
+            <p>РОССИЯ</p>
           </div>
-          <div class="block-inf">
-            <p>Китай -> Казахстан -> РФ
-              Авто/Авто
-
-              18-22 дня
-              Жд/Авто
-
-              28-32 дня</p>
+          <div class="countries-block-2">
+            <p>УЗБЕКИСТАН</p>
           </div>
-          <div class="block-inf">
-            <p>TEXT</p>
+          <div class="countries-block-3">
+            <p>КЫРГЫЗСТАН</p>
           </div>
-          <div class="block-inf">
-            <p>TEXT</p>
+          <div class="countries-block-4">
+            <p>ТУРЦИЯ</p>
+          </div>
+          <div class="countries-block-5">
+            <p>КАЗАХСТАН</p>
           </div>
         </div>
-        <div class="about-information-2">
-          <div class="block-inf">
-            <p>Для наших клиентов мы предлагаем такие сроки доставки, какие не может гарантировать ни одна другая компания</p>
-          </div>
-          <div class="block-inf">
-            <p>TEXT</p>
-          </div>
-          <div class="block-inf">
-            <p>TEXT</p>
-          </div>
-          <div class="block-inf">
-            <p>TEXT</p>
-          </div>
-        </div>
-      </div>
       </div>
     <div class="block-advantages">
       <div class="advantages-1">
@@ -256,6 +184,8 @@ export default defineComponent({
 @media screen and (max-width: 720px){
   .logo-block img{
     margin-left: 30px;
+    width: 300px;
+    height: auto;
   }
 }
 .main-block{
@@ -310,6 +240,107 @@ export default defineComponent({
   position: absolute;
   text-align: center;
   width: min-content;
+}
+.blocks-countries{
+  display: flex;
+  justify-content: space-between;
+}
+.blocks-countries p{
+  font-size: 24px;
+  font-weight: bold;
+}
+.countries-block-1{
+  height: 200px;
+  background-image: url('/img/Group11.svg');
+  background-size: cover;
+  background-position: center center;
+  border-radius: 30px;
+  margin: 10px;
+  width: 200px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: #ff7e46;
+}
+.countries-block-2{
+  height: 200px;
+  background-image: url('/img/Group12.svg');
+  background-size: cover;
+  background-position: center center;
+  border-radius: 30px;
+  margin: 10px;
+  width: 200px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: #666666;
+}
+.countries-block-3{
+  height: 200px;
+  width: 200px;
+  background-image: url('/img/Group13.svg');
+  background-size: cover;
+  background-position: center center;
+  border-radius: 30px;
+  margin: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: #ff7e46;
+}
+.countries-block-4{
+  height: 200px;
+  width: 200px;
+  background-image: url('/img/Group14.svg');
+  background-size: cover;
+  background-position: center center;
+  border-radius: 30px;
+  margin: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: #666666;
+}
+.countries-block-5{
+  height: 200px;
+  width: 200px;
+  background-image: url('/img/Group15.svg');
+  background-size: cover;
+  background-position: center center;
+  border-radius: 30px;
+  margin: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: #ff7e46;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .blocks-countries{
+    margin: 30px;
+    flex-flow: column;
+  }
+  .countries-block-1{
+    width: 100%;
+    margin: 10px 0 10px 0;
+  }
+  .countries-block-2{
+    width: 100%;
+    margin: 10px 0 10px 0;
+  }
+  .countries-block-3{
+    width: 100%;
+    margin: 10px 0 10px 0;
+  }
+  .countries-block-4{
+    width: 100%;
+    margin: 10px 0 10px 0;
+  }
+  .countries-block-5{
+    width: 100%;
+    margin: 10px 0 10px 0;
+  }
 }
 .services-block {
   color: white;
@@ -462,26 +493,11 @@ export default defineComponent({
   }
   .logo-about{
     display: flex;
-    width: 150px;
+    width: 250px;
     padding: 20px;
   }
   .logo-about-us img{
     width: 100%;
-  }
-  .information-block{
-    justify-content: center;
-    flex-flow: column;
-  }
-  .block-inf{
-    margin: 20px;
-  }
-  .about-information-1{
-    display: flex;
-    justify-content: center;
-  }
-  .about-information-2{
-    display: flex;
-    justify-content: center;
   }
 }
 @media screen and (max-width: 1000px){
@@ -499,35 +515,10 @@ export default defineComponent({
   .logo-about-us img{
     width: 155px;
   }
-  .information-block{
-    justify-content: center;
-  }
-  .about-information-1{
-    display: flex;
-    flex-flow: column;
-  }
-  .about-information-2{
-    display: flex;
-    flex-flow: column;
-  }
-  .block-inf{
-    margin: 20px;
-  }
 }
 .main-about{
   justify-content: center;
   display: flex;
-}
-.information-block{
-  display: flex;
-}
-.block-inf{
-  width: 230px;
-  height: 130px;
-  background: white;
-  border-radius: 30px;
-  justify-content: center;
-  text-align: center;
 }
 .block-advantages{
   display: flex;

@@ -4,8 +4,7 @@
       <div class="main-block">
         <div class="first-block">
           <div class="footer_block-logo">
-            <img class="footer-logo" src="" alt="LOGO" v-if="$route.path == '/'">
-            <img class="footer-logo-black" src="/icons/logoWhite.svg" v-if="$route.path == '/services' || $route.path == '/projects' || $route.path == '/achievements'">
+            <img class="footer-logo" src="/icons/UnexGroup.png" alt="LOGO">
           </div>
           <div :class="['footer_block-item', { 'footer_block-item-black': isBlack }]">
             <div class="block-dubai" @click="goToDubai">
@@ -80,6 +79,10 @@ export default {
 </script>
 
 <style scoped>
+.footer-logo{
+  width: 200px;
+  height: auto;
+}
 .telegram-logo{
   width: 40px;
 }
@@ -138,8 +141,8 @@ export default {
     padding: 30px;
     height: 100px;
   }
-  .footer-logo {
-    width: auto;
+  .footer-logo{
+    width: 150px;
   }
   .footer_block-item--mail{
 
@@ -165,10 +168,16 @@ export default {
   .footer-logo-black{
     width: 100%;
   }
+  .footer-logo{
+    width: 150px;
+  }
 }
 @media screen and (max-width: 429px) {
   .footer_block-logo {
     height: 100px;
+  }
+  .footer-logo{
+    width: 150px;
   }
 }
 
@@ -200,9 +209,6 @@ export default {
   }
   .second-block{
     display: flex;
-  }
-  .footer-logo {
-    height: 130px;
   }
   .footer-logo-black {
     height: 130px;
